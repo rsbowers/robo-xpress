@@ -1,0 +1,14 @@
+/*!==:cms:global:main:==!*/
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+/*!==:cms:module:welcome:==!*/
+.welcome {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+/*!==:cms:global:fallbacks:==!*/

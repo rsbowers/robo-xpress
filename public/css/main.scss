@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+/*!==:cms:global:main:==!*/
+
+// $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+//*================================================
+// Bootstrap
+// bower:scss
+  // @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+// endbower
+
+
+//*================================================
+// Libraries
+// @import 'lib/fontawesome-icons';
+// @import 'lib/slick';
+
+//*================================================
+// Main
+@import 'core/base';
+
+//*================================================
+// Shared
+// @import 'common/cta';
+
+//*================================================
+// CMS Required Modules
+
+/*!==:cms:module:welcome:==!*/
+@import 'components/welcome';
+
+//*=======yeoman component hook
+// The above line is required for our yeoman generator and should not be changed.
+
+//*================================================
+// Components
+/*!==:cms:global:fallbacks:==!*/
+// @import 'fallbacks';

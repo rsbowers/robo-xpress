@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "input_components": "views/components/",
+    "output_components": "dist/cms/",
+    "input_data": "data/",
+    "input_js": "public/js/",
+    "input_css": "public/css/main.css"
+  },
+  "components": [
+    {
+      "directory": "welcome",
+      "hbs": "welcome.hbs",
+      "html": "welcome.html",
+      "data": "welcome.json",
+      "css": "welcome.css",
+      "js": "welcome.js"
+    }
+  ]
+}
