@@ -7,10 +7,12 @@
     "input_pages": "views/",
     "input_hbs_layout_page": "views/layouts/cms.hbs",
     "input_hbs_layout_component": "views/layouts/component.hbs",
+    "input_images": "public/img/",
     "output_components": "dist/cms/",
     "output_global": "dist/cms/global/",
     "output_global_styles": "dist/cms/global/css/",
-    "output_global_scripts": "dist/cms/global/js/"
+    "output_global_scripts": "dist/cms/global/js/",
+    "output_images": "dist/cms/global/img/"
   },
   "pages": {
     "sample": {
