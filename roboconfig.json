@@ -1,17 +1,28 @@
 {
   "paths": {
     "input_components": "views/components/",
-    "output_components": "dist/cms/",
     "input_data": "data/",
-    "input_js": "public/js/",
-    "input_css": "public/css/main.css"
+    "input_scripts": "public/js/",
+    "input_css": "public/css/main.css",
+    "input_pages": "views/",
+    "input_hbs_layout_page": "views/layouts/cms.hbs",
+    "input_hbs_layout_component": "views/layouts/component.hbs",
+    "output_components": "dist/cms/",
+    "output_global": "dist/cms/global/",
+    "output_global_styles": "dist/cms/global/css/",
+    "output_global_scripts": "dist/cms/global/js/"
+  },
+  "pages": {
+    "sample": {
+      "data": "sample.json"
+    }
   },
   "components": [
     {
       "directory": "welcome",
       "hbs": "welcome.hbs",
       "html": "welcome.html",
-      "data": "welcome.json",
+      "data": "sample.json",
       "css": "welcome.css",
       "js": "welcome.js"
     }
