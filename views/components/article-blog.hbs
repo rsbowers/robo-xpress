@@ -1,0 +1,44 @@
+{{!
+  Article Blog
+  -----
+  -----
+  ###Class: .article-blog
+  ###Path: /dist/cms/cms.article-blog/article-blog.html
+
+  No style options available.
+}}
+
+{{#moduleWrap}}
+
+{{#each sections}}
+  <div class="blog-section">
+    {{#if heading}}
+      <h3 class="blog-section-heading">{{heading}}</h3>
+    {{/if}}
+
+    {{#each text}}
+      <div class="blog-section-text">{{this}}</div>
+    {{/each}}
+  </div>
+{{/each}}
+
+{{#if tags}}
+<div class="blog-tags">
+  <h3>Topics</h3>
+  {{#each tags}}
+  <a class="blog-tag" href="#">{{tag-name}}</a>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#isnt hideFooter true}}
+<div class="blog-interactions">
+  <a class="cta col10" href="#">{{cta.cta-text}} <i class="mdicon-arrow"></i></a>
+  <span class="blog-icons col2 last">
+    <a href="#"><i class="mda-icon-support-favorite"></i></a>
+    <a href="#"><i class="mda-icon-share"></i></a>
+  </span>
+</div>
+{{/isnt}}
+
+{{/moduleWrap}}

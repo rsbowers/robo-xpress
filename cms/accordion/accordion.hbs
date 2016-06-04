@@ -1,0 +1,68 @@
+{{!
+  Accordion
+  -----
+  -----
+  ###Class: .accordion
+  ###Path: /dist/cms/cms.accordion/accordion.html
+
+  No style options available.
+}}
+
+{{#moduleWrap}}
+
+<div class="mda-accordion accordion-module">
+
+  {{#each data.accordion-items}}
+
+    <h3 class="panel-title ui-accordion-header">
+      <a href="#">
+        <span class="header-text">{{ header-text }}</span>
+        <i class='fa fa-minus'></i>
+        <i class='fa fa-plus'></i>
+      </a>
+    </h3>
+
+    <div class="panel-container ui-accordion-content">
+
+      <div class="panel-content">
+
+        {{#if content-full}}
+            <div class="accordion-content-full accordion-content col12">
+                {{#each content-full.text}}
+                    <p>{{{ this }}}</p>
+                {{/each}}
+                <p><a href="#" class='cta'>Learn More<i class="mdicon-arrow"></i></a></p>
+            </div>
+        {{/if}}
+
+        {{#if content-left}}
+        <div class="accordion-content-left accordion-content col6 {{ content-left.background-color }}">
+          {{#each content-left.text}}
+            <p>{{{ this }}}</p>
+          {{/each}}
+          {{#if content-left.list}}
+            <ul>
+              {{#each content-left.list}}
+                <li>{{ this }}</li>
+              {{/each}}
+            </ul>
+          {{/if}}
+          <p><a href="#" class='cta'>Learn More<i class="mdicon-arrow"></i></a></p>
+        </div>
+        {{/if}}
+
+        {{#if content-right}}
+        <div class="accordion-content col6 last">
+          {{> did-you-know }}
+        </div>
+        {{/if}}
+
+      </div>
+
+    </div>
+
+  {{/each}}
+
+</div>
+
+{{/moduleWrap}}

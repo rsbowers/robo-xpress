@@ -7,10 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs  = require('express-handlebars');
+var helpers = require('./helpers/index');
 var routing = require('./lib/routing');
-
-// var routes = require('./routes/index');
-// var users = require('./routes/user');
+var config = require('./roboconfig.json');
 
 var app = express();
 
@@ -26,9 +25,10 @@ app.engine('.hbs', exphbs({
   partialsDir: [
     'views/partials/',
     'views/components/'
-  ]
+  ],
+  helpers: helpers.exphbs()
 }));
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/pages'));
 app.set('view engine', '.hbs');
 
 // app.use(favicon(__dirname + '/public/img/favicon.ico'));
@@ -38,18 +38,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', routes);
 // app.use('/users', users);
 
-// index route
-app.get( '/', function( req, res ) {
-	res.render('index',{'title':'Index Route'});
-} );
-
 // dynamic routing
-routing( app, __dirname + '/routes' );
+routing( app, __dirname + '/routes', config.route_aliases );
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

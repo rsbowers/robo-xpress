@@ -61,8 +61,72 @@ module.exports = function (grunt) {
         }
       }
     },
+    clean: {
+      build: {
+        files: [{
+          dot: true,
+          src: [
+            'dist/*',
+            'tmp/*'
+          ]
+        }]
+      }
+    },
     robo: {
       compile: {}
+    },
+    useminPrepare: {
+      options: {
+        dest: 'dist/site'
+      },
+      html: 'tmp/site/index.html'
+    },
+    usemin: {
+      options: {
+        // assetsDirs: [
+        //   'dist/site',
+        //   'dist/site/images',
+        //   'dist/site/styles'
+        // ]
+      },
+      html: ['dist/site/{,*/}*.html', 'tmp/site/{,*/}*.html'],
+      css: ['dist/site/styles/{,*/}*.css']
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          // collapseBooleanAttributes: true,
+          // collapseWhitespace: true,
+          // conservativeCollapse: true,
+          // removeAttributeQuotes: true,
+          // removeCommentsFromCDATA: true,
+          // removeEmptyAttributes: true,
+          // removeOptionalTags: true,/
+          // true would impact styles with attribute selectors
+          // removeRedundantAttributes: false,
+          // useShortDoctype: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'tmp/site',
+          src: '{,*/}*.html',
+          dest: 'dist/site'
+        }]
+      }
+    },
+    copy: {
+      temp: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'public',
+          dest: 'tmp/site',
+          src: [
+            'css/{,*/}*.css',
+            'js/{,*/}*.js'
+          ]
+        }]
+      }
     }
   });
 
@@ -92,8 +156,15 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    //'clean:dist',
+    'clean:build',
     'sass',
-    'robo:compile'
+    'robo:compile',
+    'copy:temp',
+    'useminPrepare',
+    'concat',
+    'cssmin',
+    'uglify',
+    'usemin',
+    'htmlmin'
   ]);
 };

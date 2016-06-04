@@ -1,32 +1,73 @@
 {
-  "paths": {
-    "input_components": "views/components/",
-    "input_data": "data/",
-    "input_scripts": "public/js/",
-    "input_css": "public/css/main.css",
-    "input_pages": "views/",
-    "input_hbs_layout_page": "views/layouts/cms.hbs",
-    "input_hbs_layout_component": "views/layouts/component.hbs",
-    "input_images": "public/img/",
-    "output_components": "dist/cms/",
-    "output_global": "dist/cms/global/",
-    "output_global_styles": "dist/cms/global/css/",
-    "output_global_scripts": "dist/cms/global/js/",
-    "output_images": "dist/cms/global/img/"
-  },
-  "pages": {
-    "sample": {
-      "data": "sample.json"
-    }
-  },
-  "components": [
-    {
-      "directory": "welcome",
-      "hbs": "welcome.hbs",
-      "html": "welcome.html",
-      "data": "sample.json",
-      "css": "welcome.css",
-      "js": "welcome.js"
-    }
-  ]
+	"paths": {
+		"input_components": "views/components/",
+		"input_partials": "views/partials/",
+		"input_pages": "views/pages/",
+		"input_data": "data/",
+		"input_scripts": "public/js/",
+		"input_css": "public/css/main.css",
+		"input_layouts": "views/layouts/",
+		"input_images": "public/img/",
+		"output_tmp": "tmp/",
+		"output_dist": "dist/",
+		"output_components": "cms/",
+		"output_global": "cms/global/",
+		"output_global_styles": "cms/global/css/",
+		"output_global_scripts": "cms/global/js/",
+		"output_images": "cms/global/img/",
+		"output_pages": "site/"
+	},
+	"route_aliases": {
+		"/": "/index"
+	},
+	"layouts": {
+		"component": "component.hbs",
+		"page": "main.hbs"
+	},
+	"pages": {
+		"index": {
+			"hbs": "index.hbs",
+			"html": "index.html",
+			"layout": "page",
+			"data": {
+				"data_navigation": "navigation.json",
+				"modules_carousel": "carousel.json",
+				"modules_collection": "collection.json",
+				"modules_promo": "promo.json",
+				"modules_link_list": "link_list.json",
+				"modules_basic_content": "basic_content.json",
+				"modules_basic_content_media": "basic_content_media.json",
+				"modules_search_block": "search_block.json",
+				"modules_teaser": "teaser.json",
+				"modules_hero": "hero.json",
+				"modules_layout": "layout.json"
+			}
+		},
+		"prevention": {
+			"hbs": "prevention.hbs",
+			"html": "prevention.html",
+			"layout": "page",
+			"data": {
+				"data_navigation": "navigation.json",
+				"modules_carousel": "carousel.json",
+				"modules_promo": "promo.json",
+				"modules_link_list": "link_list.json",
+				"modules_basic_content": "basic_content.json",
+				"modules_basic_content_media": "basic_content_media.json",
+				"modules_teaser": "teaser.json",
+				"modules_hero": "hero.json",
+				"modules_layout": "layout.json",
+				"modules_headline": "headline.json"
+			}
+		}
+	},
+	"components": [{
+		"directory": "accordion",
+		"hbs": "accordion.hbs",
+		"html": "accordion.html",
+		"data": "accordion.json",
+		"css": "accordion.css",
+		"js": "app.accordion.js",
+		"layout": "component"
+	}]
 }

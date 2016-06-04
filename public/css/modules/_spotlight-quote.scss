@@ -1,0 +1,80 @@
+.spotlight-quote {
+	display: table;
+	> div {
+		position: relative;
+		display: table-cell;
+		width: 50%;
+		text-align: center;
+		vertical-align: middle;
+		padding: 50px;
+		&:first-of-type {
+			&:after {
+				position: absolute;
+				right: 0;
+				top: 20%;
+				bottom: 20%;
+				content: '';
+				width: 1px;
+				background: $neutralGrey;
+			}
+		}
+		h2 {
+			@include type-m-32(32px, 21px);
+			margin-bottom: 0;
+			margin-top: 20px;
+			font-weight: normal;
+		}
+		h3 {
+			@include type-ub-24;
+			font-weight: normal;
+			color: $primaryRed;
+			margin-bottom: 40px;
+		}
+		.secondary-info {
+			@include type-ub-16(16px, 14px);
+			margin: 0;
+		}
+		.other-info {
+			@include type-u-16(16px, 14px);
+			margin-top: 5px;
+		}
+		&.quote {
+			padding: 70px;
+			> p {
+				@include type-m-32(32px, 21px);
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.quote-icon {
+				color: $primaryRed;
+			}
+		}
+		.image-container {
+			width: 132px;
+			height: 132px;
+			overflow: hidden;
+			display: inline-block;
+			border-radius: 50%;
+			img {
+				display: block;
+			}
+		}
+	}
+	@include breakpoint (max-width $width-small) {
+		display: block;
+		> div {
+			display: block;
+			width: 100%;
+			&:first-of-type {
+				&:after {
+					top: auto;
+					bottom: 0;
+					left: 20%;
+				    right: 20%;
+				    width: auto;
+				    height: 1px;
+				}
+			}
+		}
+	}
+}

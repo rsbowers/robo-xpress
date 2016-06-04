@@ -1,0 +1,92 @@
+.spotlight-headline {
+	display: table;
+	> div {
+		position: relative;
+		display: table-cell;
+		width: 50%;
+		vertical-align: middle;
+		padding: 0;
+		.headline {
+			@include type-m-36;
+			line-height: 1.05em;
+			margin-bottom: 30px;
+			margin-top: 20px;
+			font-weight: normal;
+		}
+		h3 {
+			@include type-ub-18;
+			font-weight: normal;
+			color: $lightPurple;
+			margin: 0px;
+		}
+		.sub-info {
+			@include type-u-18;
+			color: $lightPurple;
+			margin: 0;
+
+		}
+		.other-info {
+			@include type-u-21;
+			margin-top: 5px;
+		}
+		&.media {
+			margin: 0;
+			height: auto;
+			width: 50%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+		}
+		&:first-of-type {
+			padding-right: 30px;
+		}
+		&:last-of-type {
+			&.info{
+				padding-left: 100px;
+			}
+
+			padding-right: 30px;
+		}
+		.cta {
+			@include type-u-18;
+		}
+	}
+	@include breakpoint (max-width $width-small) {
+		padding-bottom: 30px;
+		display: block;
+		> div {
+			display: block;
+			width: 100%;
+
+			.headline{
+				padding: 0;
+			}
+			&:first-of-type {
+				margin-bottom: 30px;
+			}
+
+
+			&.info{
+				padding: 0 30px;
+			}
+			&:last-of-type {
+				&.info{
+					padding: 0 30px;
+				}
+			}
+
+			&.media {
+				width: 100%;
+				height: auto;
+				padding: 0;
+				img {
+					width: 100%;
+					height: auto;
+				}
+
+			}
+		}
+	}
+}

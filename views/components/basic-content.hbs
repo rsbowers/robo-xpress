@@ -1,0 +1,38 @@
+{{!
+  Basic Content
+  -----
+  -----
+  ###Class: .basic-content
+  ###Path: /dist/cms/cms.basic-content/basic-content.html
+
+  **Image Styling**<br/>
+    Content author must select either:<br/>
+    *.mda-survivor-media*<br/>
+      or<br/>
+    *.mda-other-media*<br/>
+    for image rollover effect.
+}}
+
+{{#moduleWrap}}
+<div class="wrap">
+
+  {{#if data.img}}
+    {{#contains data.img.location "top"}}
+      <img src="{{data.img.src}}" alt="{{data.img.alt}}">
+    {{/contains}}
+  {{/if}}
+
+  {{#if data.title}}
+  <div class="title">{{data.title}}</div>
+  {{/if}}
+
+  {{#if data.body}}
+  <div class="body">{{data.body}}</div>
+  {{/if}}
+
+  {{#if data.cta}}
+  <div class="cta"><a>{{data.cta.cta-text}} <span class="mdicon-arrow"></span></a></div>
+  {{/if}}
+
+</div>
+{{/moduleWrap}}
