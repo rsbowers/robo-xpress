@@ -30,34 +30,7 @@
 			"html": "index.html",
 			"layout": "page",
 			"data": {
-				"data_navigation": "navigation.json",
-				"modules_carousel": "carousel.json",
-				"modules_collection": "collection.json",
-				"modules_promo": "promo.json",
-				"modules_link_list": "link_list.json",
-				"modules_basic_content": "basic_content.json",
-				"modules_basic_content_media": "basic_content_media.json",
-				"modules_search_block": "search_block.json",
-				"modules_teaser": "teaser.json",
-				"modules_hero": "hero.json",
-				"modules_layout": "layout.json"
-			}
-		},
-		"prevention": {
-			"hbs": "prevention.hbs",
-			"html": "prevention.html",
-			"layout": "page",
-			"data": {
-				"data_navigation": "navigation.json",
-				"modules_carousel": "carousel.json",
-				"modules_promo": "promo.json",
-				"modules_link_list": "link_list.json",
-				"modules_basic_content": "basic_content.json",
-				"modules_basic_content_media": "basic_content_media.json",
-				"modules_teaser": "teaser.json",
-				"modules_hero": "hero.json",
-				"modules_layout": "layout.json",
-				"modules_headline": "headline.json"
+				"hero": "hero.json"
 			}
 		}
 	},

@@ -1,25 +1,22 @@
-{{> html_head }}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{{title }}</title>
+	<link rel="stylesheet" href="/css/main.css">
+	{{#if ENV_DEVELOPMENT}}
+		<script src="http://localhost:35729/livereload.js"></script>
+	{{/if}}
+</head>
+
+<body>
 
 
-    {{>mobile-nav mobile_nav.mobile-nav.about-md-anderson}}
+	{{{body}}}
 
 
-  <main class="l-main">
-    {{> header this}}
-  	<div class="page" id="skip" tabindex="-1">
-  		<div class="content">
-  			{{{body}}}
-  		</div>
-      {{> pre-footer}}
-    {{> footer }}
-  	</div>
+</body>
 
-  </main>
-
-  <div id="l-modal">
-    <a class="modal-close" href="#"><i class="fa fa-times"></i></a>
-    <div class="l-modal-body"></div>
-  </div>
-
-
-{{> html_tail }}
+</html>

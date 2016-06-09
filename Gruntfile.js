@@ -61,6 +61,20 @@ module.exports = function (grunt) {
         }
       }
     },
+    bowercopy: {
+      options: {
+        srcPrefix: 'bower_components'
+      },
+      scripts: {
+        options: {
+          destPrefix: 'public/vendor'
+        },
+        files: {
+          'jquery.js': 'jquery/dist/jquery.js',
+          'html5shiv.js': 'html5shiv/dist/html5shiv.js'
+        }
+      }
+    },
     clean: {
       build: {
         files: [{
@@ -151,6 +165,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'sass',
+    'bowercopy',
     'develop',
     'watch'
   ]);
@@ -158,6 +173,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:build',
     'sass',
+    'bowercopy',
     'robo:compile',
     'copy:temp',
     'useminPrepare',
